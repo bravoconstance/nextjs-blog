@@ -1,11 +1,14 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
+import ExampleDialog from '../components/ExampleDialog'
+import CustomButton from '../components/Button'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 import { GetStaticProps } from 'next'
 import React from 'react'
+
 
 export default function Home({ allPostsData }: {
   allPostsData:{
@@ -14,7 +17,7 @@ export default function Home({ allPostsData }: {
     id: string
   }[]}) {
   return (
-    <Layout home>
+    <Layout home >
       {/* Keep the existing code here */}
       <Head>
         <title>{siteTitle}</title>
@@ -43,6 +46,8 @@ export default function Home({ allPostsData }: {
           ))}
         </ul>
       </section>
+      <ExampleDialog/>
+      <CustomButton/>
     </Layout>
   );
 }

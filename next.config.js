@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   async redirects() {
     return [
@@ -8,4 +10,8 @@ module.exports = {
       },
     ];
   },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
 };
+
